@@ -1,0 +1,195 @@
+
+   
+   <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)=" totalCarrito()">
+    Carrito  <span class="badge bg-secondary">{{ItemC}}</span>
+  </button>
+  <br>
+  <div class="alert alert-primary" role="alert">
+    selecciono: {{cadenaZ}}
+  </div>
+
+<br>
+
+
+<!-- Modal de carrito-->
+<div class="modal fade" id="exampleModal2" tabindex="-6" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header">
+PRODUCTOS
+<div class="alert alert-danger" role="alert" *ngIf="compraMala">
+error hay un item ({{nameProductoF}}) que excede a las unidades que nosotros disponemos
+</div>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)=" compraMalaOff()"></button>
+    </div>
+    <div class="modal-body">
+        <ul>
+            <li>
+                    <div *ngFor="let productos of Carrito">
+                        <div class="container">
+                            <div class="row">
+                    
+                                <div class="col-sm-2  bg-dark text-white " >
+                                    {{productos.item.Nombre}}
+                                </div>
+
+                                <div class="col-sm-2 bg-dark text-white">
+                                    STOCK:{{productos.item.Cantidad}}
+                                </div>
+
+                                <div class="col-sm-2 bg-dark text-white">
+                                    Q{{productos.item.Precio}}
+                                </div>
+
+                                <div class="col-sm-2 bg-dark text-white">
+                                    unidades: {{productos.cantidad}}
+                                </div>
+                    
+                                <div class="col-sm bg-dark">
+                                    <button class="btn btn-info btn-block" (click)=" descartar(productos.item.Nombre)">
+                                        descartar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </li>
+                </ul>
+                <div class="modal-footer">
+                    <div class="col-sm bg-dark text-white">
+                        <!--button class="btn btn-info btn-block" (click)=" totalCarrito()"-->
+                            total Q {{Subtotal}}
+                        <!--/button-->
+                    </div>
+                       <button class="btn btn-info btn-block" (click)=" Purchase()">
+                       Comprar
+                       </button>
+
+
+                  </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+
+<!-- Button trigger modal -->
+<!--button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+Productos de la tienda seleccionada
+</button-->
+
+<!-- Modal de los productos de una tienda-->
+<div class="modal fade" id="exampleModal" tabindex="-6" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header">
+PRODUCTOS
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <ul>
+            <li>
+                    <div *ngFor="let productos of ListaDeTiendasInventario2">
+                        <div class="container">
+                            <div class="row">
+                    
+                                <div class="col-sm-2  bg-dark text-white " >
+                                    {{productos.Nombre}}
+                                </div>
+                    
+                                <div class="col-sm-4 bg-dark text-white">
+                                    {{productos.Descripcion}}
+                                </div>
+                    
+                                <div class="col-sm-2 bg-dark">
+                                    <img [src]="productos.Imagen" class="card-img-top" height="100" width="100">
+                                </div>
+
+                                <div class="col-sm-2 bg-dark text-white">
+                                    Q{{productos.Precio}}
+                                </div>
+                    
+                                <div class="col-sm bg-dark">
+                                    <button class="btn btn-info btn-block" (click)=" alert1(productos.Nombre)">
+                                        comprar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                </ul>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!--VISTA DE PRODUCTOS-->
+<!--div class="alert alert-secondary position-relative" role="alert" *ngFor="let productos of ListaDeTiendasInventario2">
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-1  bg-dark text-white " >
+            {{productos.Nombre}}
+        </div>
+
+        <div class="col-sm-3 bg-dark text-white">
+            <p>{{productos.Descripcion}}</p>
+        </div>
+
+        <div class="col-sm-1 ">
+            <img [src]="productos.Imagen" class="card-img-top" height="100" width="0">
+        </div>
+
+        <div class="col-sm-1">
+            <button class="btn btn-info btn-block" (click)=" alert1(productos.Nombre)">
+                comprar
+            </button>
+        </div>
+    </div>
+</div>
+</div-->
+
+<br>
+<br>
+<h1>Lista de Tiendas</h1>
+<br>
+
+<!--VISTA DE TIENDAS-->
+<div class="container">
+<div class="row">
+    <div class="col-md-4" *ngFor="let store of ListaDeTiendasInventario">
+        <div class="card text-center">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                {{store.Nombre}}
+                <!--i class="far fa-trash-alt"></i-->
+            </div>
+            <img [src]="store.Logo" class="card-img-top" height="300" width="100">
+            <div class="card-body">
+                <p>{{store.Descripcion}}</p>
+                <button class="btn btn-info btn-block" (click)="helloSay(store.Nombre)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    ver productos
+                </button>
+
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+<div class="tabs_container" id="tabs_bar"></div>

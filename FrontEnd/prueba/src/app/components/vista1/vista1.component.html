@@ -1,0 +1,70 @@
+<!--SOY LA PAGINA DE INICIO-->
+
+<!--SOY LA BARRA QUE APARECE EN TODAS LA VENTANAS PARA MOVERME EN LAS PAGINAS-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" >Carga Archivos</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Carga Archivos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" id="1" (click)="Mensaje(tiendasstr)">Tiendas</a></li>
+                        <input type='file' (change)="fileChanged($event,1)">
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" id="2"(click)="Mensaje(productosstr)">Productos</a></li>
+                        <input type='file' (change)="fileChanged($event,2)">
+                        
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" id="3"(click)="Mensaje(pedidosstr)" >Pedidos</a></li>
+                        <input type='file' (change)="fileChanged($event,3)">
+                    </ul>
+                </li>
+              
+            </ul>
+            
+        </div>
+    </div>
+  </nav>
+  <h1>INICIO</h1>
+  <h3>Desactivar antivirus para generar imagenes!</h3>
+  
+       
+    
+       
+  
+      
+        
+  
+              <div class="container">
+                  <div class="row row-cols-3">
+                    <div class="col">
+                        
+              <h2>TIENDAS</h2>
+              <textarea class="form-control" name="TIENDASTXT" id="TIENDAS" rows="10" placeholder="Ingresa las tiendas" readonly></textarea>
+                    </div>
+                    <div class="col">
+                      <h2>PRODUCTOS</h2>
+                      <textarea class="form-control" name="PRODUCTOSTXT" id="PRODUCTOS" rows="10" placeholder="Ingresa los productos" readonly></textarea>
+                    </div>
+                    <div class="col">
+                      <h2>PEDIDOS</h2>
+                      <textarea class="form-control" name="PEDIDOSTXT" id="PEDIDOS" rows="10" placeholder="Ingresa los pedidos" readonly></textarea>
+            
+                
+                </div>
+  
+    
+  
+  
+  

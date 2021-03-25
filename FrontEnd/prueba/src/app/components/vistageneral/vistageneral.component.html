@@ -1,0 +1,76 @@
+<h1>REPORTES</h1>
+<h4>Desactivar antivirus para generar imagenes!</h4>
+<!--ul>
+    <li *ngFor="let anyos of listaAnyos">{{anyos}}</li>
+</ul-->
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-2  bg-dark text-white " >
+           <!--**************************************************-->
+           <ul>
+            Años
+            
+            <li *ngFor="let anyos of ListaDeAnyos">
+                <button class="btn btn-secondary" (click)="Anyo(anyos)">{{anyos.Anio}}</button>
+                <ul>
+                    Meses
+                    <li *ngFor="let mes of anyos.Meses">  
+                        <button class="btn btn-info btn-block" (click)="Month(mes,anyos)">{{mes.NombreMes}}</button>        
+                    </li>
+                </ul>
+                <br>
+            </li>
+        </ul>
+           <!--**************************************************-->
+        </div>
+
+        <div class="col-sm-7 bg-dark text-white">
+        <!--****************************************************************-->
+        <!--img [src]="'data:image/png;base64,'+imageBase64" /-->
+        <img height="550" width="550" src="{{'data:image/png;base64,' + imageBase64}}" />
+        <!--****************************************************************-->
+        </div>
+
+        <div class="col-sm-3 bg-dark text-white">
+            Tener la imagen seleccionada!
+           fila (*azul)
+           <form (submit)="agregar(newUser)">
+            <input type="text" #newUser>
+            <button>fila</button>
+        
+        </form>
+        columna(*beige)
+        <form (submit)="agregar2(newUser2)">
+            <input type="text" #newUser2>
+            <button>columna</button>
+        
+        </form>
+        <button  (click)="ObtenerCola(newUser,newUser2)" >cola</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 bg-dark text-white">Ver estuctruras [COMPLETO]
+            <ul>
+                <li><button class="btn btn-info btn-block" (click)="fullA()">Lista Anyos completo</button> </li>
+                <li><button class="btn btn-secondary" (click)="arboles()">Cargar Arboles</button> </li>
+                <br>
+                <li *ngFor="let tienda of ListaDeTiendasInventario" ><button class="btn btn-info btn-block" (click)="arboles2(tienda)">{{tienda.Nombre}}</button> </li>
+            </ul>
+            
+        </div>
+        <div class="col-sm-6 bg-dark text-white">
+            1. El item hasta el fondo de la cola es el primero es ser descolado.
+            <br>
+            2. Al darle en cola se obtienen los datos de sus 2 cajas de texto.
+            <br>
+            3. Al seleccionar un anyo se muestra sus listas de meses.
+            <br>
+            4. Al seleccionar un mes automaticamente se observa la matrizD.
+            <br>
+            5. En downloads solo se obtiene la visibilidad maxima de la lista de anyos y sus listas de meses.
+        </div>
+    </div>
+</div>
