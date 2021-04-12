@@ -1,0 +1,81 @@
+<!-- soy la barra xd-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" >Virtual Mall</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/Admin">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/tiendas">Tiendas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/reportes" >Reportes</a>
+                </li>
+                
+               
+              
+            </ul>
+  
+  
+            <ul class="navbar-nav ml-auto">
+              <!--ng-container *ngIf="!authService.loggedIn(); else loggedIn"-->
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/home" routerLinkActive="active">Iniciar sesion</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/createUsser" routerLinkActive="active">Crear cuenta</a>
+                </li>
+              <!--/ng-container-->
+              <!--ng-template #loggedIn>
+                <li class="nav-item">
+                  <a class="nav-link" style="cursor: pointer;" (click)="authService.logout()">Logout</a>
+                </li>
+              </ng-template-->
+            </ul>
+            
+        </div>
+    </div>
+  </nav>
+  
+  <p>Inicio de usuarios</p>
+  
+  
+  <div class="row">
+      <div class="col-md-4 mx-auto">
+          <div class="card">
+              <div class="card-header">
+                  Crear usuario
+              </div>
+              <div class="card-body">
+                  <form> <!--form (submit)="signUp()"-->
+                      <div class="form-group">
+                        <a>Correo Electronico</a>
+                          <input type="text" [(ngModel)]="newUser.email" name="email" class="form-control" placeholder="Email" required autofocus>
+                      </div>
+                      <div class="form-group">
+                        <a>Contraseña</a>
+                          <input type="password" [(ngModel)]="newUser.password" name="password" class="form-control" placeholder="Password" required>
+                      </div>
+                      <div class="form-group">
+                        <a>Nombre</a>
+                        <input type="text" [(ngModel)]="newUser.nombre" name="nombre" class="form-control" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <a>DPI</a>
+                        <input type="text" [(ngModel)]="newUser.dpi" name="dpi" class="form-control" placeholder="DPI" required>
+                    </div>
+                      <button type="button" class="btn btn-primary btn-block" (click)="crearUsuario()">
+                          Crear
+                      </button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  

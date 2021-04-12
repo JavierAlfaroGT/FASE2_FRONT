@@ -132,4 +132,112 @@ getImagenArbol(txt):Observable<any>{
 }
 
 
+//fase 3 ------------------------------------------------------------------------
+CargaUsuarios(txt){
+  //document.getElementById("TIENDAS").innerText 
+  console.log("*********************************************************************\n"+txt)
+  var json = JSON.parse(txt);
+  
+  return this.http.post('http://localhost:3000/cargarUsuarios',json )
+  //this.http.post('')
+}
+
+
+loggedIn() {
+  return !!localStorage.getItem('usuario');//me devuleve un true si existe este token usuario
+  
+}
+
+loggedInAdmin() {
+  var a = localStorage.getItem('usuario')
+  console.log('>>>tipo de usuario alojado:'+a+'\n\n')
+
+  if(a=='Admin'){
+
+    //return localStorage.getItem('usuario');//me devuleve un true si existe este token usuario
+    return true
+
+  }else{return false}
+
+  
+  
+}
+
+loggedInCliente() {
+  var a = localStorage.getItem('usuario')
+  console.log('>>>tipo de usuario alojado:'+a+'\n\n')
+
+  if(a=='Usuario'){
+
+    //return localStorage.getItem('usuario');//me devuleve un true si existe este token usuario
+    return true
+
+  }else{return false}
+}
+
+CrearUsuarios(txt){
+  //document.getElementById("TIENDAS").innerText 
+  console.log("*********************************************************************\n"+txt)
+  var json = JSON.parse(txt);
+  
+  return this.http.post('http://localhost:3000/crearUsuarios',json )
+  //this.http.post('')
+}
+
+
+Login(txt){
+  //document.getElementById("TIENDAS").innerText 
+  console.log("*********************************************************************\n"+txt)
+  var json = JSON.parse(txt);
+  
+  return this.http.post('http://localhost:3000/LogUsuarios',json )
+  //this.http.post('')
+}
+
+normal="normal AB"
+sensible="sensible AB"
+full="full AB"
+
+//obtener imagenes
+getArbolNormal():Observable<any>{
+
+  console.log("********************************  get imagen arbolB normal   *****************************\n")
+
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
+  return this.http.get<any>('http://localhost:3000/getArbolBN', httpOptions);//devuelve el grafo de todos los anyos y meses juntos
+
+}
+
+getArbolSensible():Observable<any>{
+
+  console.log("********************************  get imagen arbolB sensible  *****************************\n")
+
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
+  return this.http.get<any>('http://localhost:3000/getArbolBS', httpOptions);//devuelve el grafo de todos los anyos y meses juntos
+
+}
+
+getArbolFull():Observable<any>{
+
+  console.log("********************************  get imagen arbolB full   *****************************\n")
+
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
+  return this.http.get<any>('http://localhost:3000/getArbolBF', httpOptions);//devuelve el grafo de todos los anyos y meses juntos
+
+}
+
+
+
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{Fase2Service}from 'src/app/services/fase2.service'
 import{Tiendas} from '../../models/tiendas/tiendas'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-vista1',
@@ -12,12 +13,13 @@ export class Vista1Component implements OnInit {
   tiendasstr = "tiendas ^-^"
   productosstr = "productos (*o*)"
   pedidosstr = "pedidos TuT"
+  usuariosstr="usuarios -_-"
 
 
   txtTiendas = ""//texto q envio a golang
 
   file: any;
-  constructor(private fase2service:Fase2Service) { }
+  constructor(private fase2service:Fase2Service,private router: Router) { }
 
   ngOnInit() {
     
@@ -72,6 +74,19 @@ export class Vista1Component implements OnInit {
         //console.log("volvio de go:"+alfa)
        }
 
+       if (tipo == 4) { 
+        // console.log("JIMMY NEWTRON")
+        document.getElementById("USUARIOS").innerText = this.txtTiendas 
+        var alfa = this.fase2service.CargaUsuarios(this.txtTiendas)
+        .subscribe(
+          res=>{
+            console.log(res)
+          },
+          err=>console.log(err)
+        )
+        //console.log("volvio de go:"+alfa)
+         }
+
     }
     fileReader.readAsText(this.file);
   }
@@ -93,10 +108,21 @@ export class Vista1Component implements OnInit {
         alert("seleccione JSON pedidos")
         console.log(n)
         break;
+        case "usuarios -_-":
+          alert("seleccione JSON usuarios")
+          console.log(n)
+          break;
 
       default:
         break;
     }
+  }
+
+
+  longOut(){
+    localStorage.clear()//limpio porq inicio como cliente
+    alert("Ha cerrado sesion, Adios!")
+    //this.router.navigate(['/home'])
   }
 
 

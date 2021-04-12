@@ -1,3 +1,40 @@
+<!--SOY LA PAGINA DE INICIO-->
+<!--SOY LA BARRA QUE APARECE EN TODAS LA VENTANAS PARA MOVERME EN LAS PAGINAS-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" >Admin</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/Admin">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/reportes" >Reportes</a>
+                </li>
+               
+              
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <!--ng-container *ngIf="!authService.loggedIn(); else loggedIn"-->
+                  <li class="nav-item">
+                    <a class="nav-link" (click)="longOut()"  routerLink="/home" routerLinkActive="active">Cerrar sesion</a>
+                  </li>
+              </ul>
+            
+        </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
 <h1>REPORTES</h1>
 <h4>Desactivar antivirus para generar imagenes!</h4>
 <!--ul>
@@ -74,3 +111,59 @@
         </div>
     </div>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+    <label for="fname"><b>Password Maestro</b></label><br>
+    <!--p><input type="text" id="username" name="username" #username></p-->
+    <div class="form-group">
+        <input type="password" id="username" name="username" #username class="form-control" placeholder="Password" required>
+    </div>
+</div>
+</div>
+
+        
+    <button  class="btn btn-info btn-block" (click)="ObtenerAB(username.value)" >Normal</button>
+        <div class="col-sm-14 bg-dark text-white">
+
+            <!--****************************************************************-->
+            <!--img [src]="'data:image/png;base64,'+imageBase64" /-->
+            <img height="550" width="930" src="{{'data:image/png;base64,' + imageBase64F3A}}" />
+            <!--****************************************************************-->
+            </div>
+
+            <br>
+            <br>
+            <button  class="btn btn-info btn-block" (click)="ObtenerAB1(username.value)" >Cifrado sensible</button>
+        <div class="col-sm-14 bg-dark text-white">
+        
+        <!--****************************************************************-->
+        <!--img [src]="'data:image/png;base64,'+imageBase64" /-->
+        <img height="550" width="930" src="{{'data:image/png;base64,' + imageBase64F3B}}" />
+        <!--****************************************************************-->
+        </div>
+
+        <br>
+        <br>
+<button  class="btn btn-info btn-block" (click)="ObtenerAB2(username.value)" >Full cifrado</button>
+        <div class="col-sm-14 bg-dark text-white">
+            <!--****************************************************************-->
+            <!--img [src]="'data:image/png;base64,'+imageBase64" /-->
+            <img height="550" width="930" src="{{'data:image/png;base64,' + imageBase64F3C}}" />
+            
+            <!--****************************************************************-->
+            </div>
+        <br>
+        <br>
+
+</div>
+
+

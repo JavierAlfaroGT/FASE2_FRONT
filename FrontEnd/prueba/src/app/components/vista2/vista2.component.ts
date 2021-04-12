@@ -304,5 +304,14 @@ export class Vista2Component implements OnInit {
     //   document.getElementById("tabs_bar").innerHTML+= '<button type="button" id ='+n+' class="btn btn-dark" (click)="alert1((tab_count-1))">{{tab_count}} press'+' </button>';
 
   }*/
+
+  longOut(){
+    localStorage.clear()//limpio porq inicio como cliente
+    alert("Ha cerrado sesion, Adios!")
+    //this.router.navigate(['/home'])
+  }
+
+
+
 }
 

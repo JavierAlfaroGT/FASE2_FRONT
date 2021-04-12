@@ -1,6 +1,35 @@
 <!--SOY LA PAGINA DE INICIO-->
-
 <!--SOY LA BARRA QUE APARECE EN TODAS LA VENTANAS PARA MOVERME EN LAS PAGINAS-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" >Admin</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/Admin">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/reportes" >Reportes</a>
+                </li>
+               
+              
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <!--ng-container *ngIf="!authService.loggedIn(); else loggedIn"-->
+                  <li class="nav-item">
+                    <a class="nav-link" (click)="longOut()"  routerLink="/home" routerLinkActive="active">Cerrar sesion</a>
+                  </li>
+              </ul>
+            
+        </div>
+    </div>
+  </nav>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" >Carga Archivos</a>
@@ -12,7 +41,7 @@
                 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Carga Archivos
+                    Tipos de carga
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                         <li><a class="dropdown-item" id="1" (click)="Mensaje(tiendasstr)">Tiendas</a></li>
@@ -28,6 +57,11 @@
                         </li>
                         <li><a class="dropdown-item" id="3"(click)="Mensaje(pedidosstr)" >Pedidos</a></li>
                         <input type='file' (change)="fileChanged($event,3)">
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" id="4"(click)="Mensaje(usuariosstr)" >Usuarios</a></li>
+                        <input type='file' (change)="fileChanged($event,4)">
                     </ul>
                 </li>
               
@@ -47,7 +81,7 @@
         
   
               <div class="container">
-                  <div class="row row-cols-3">
+                  <div class="row row-cols-4">
                     <div class="col">
                         
               <h2>TIENDAS</h2>
@@ -60,11 +94,18 @@
                     <div class="col">
                       <h2>PEDIDOS</h2>
                       <textarea class="form-control" name="PEDIDOSTXT" id="PEDIDOS" rows="10" placeholder="Ingresa los pedidos" readonly></textarea>
-            
-                
                 </div>
+                <div class="col">
+                    <h2>Usuarios</h2>
+                    <textarea class="form-control" name="USUARIOSTXT" id="USUARIOS" rows="10" placeholder="Ingresa los usuarios" readonly></textarea>
+          
+              
+              </div>
   
-    
+    </div>  
+</div>
   
-  
+  <a>aqui va lo de encriptar los passwords</a>
+  <br>
+  <a>aqui va lo de eliminar cuenta</a>
   
