@@ -238,6 +238,15 @@ getArbolFull():Observable<any>{
 
 }
 
+CargaGrafo(txt){
+  //document.getElementById("TIENDAS").innerText 
+  console.log("***********************************************************************\n"+txt)
+  var json = JSON.parse(txt);
+  
+  return this.http.post('http://localhost:3000/cargargrafos',json )
+  //this.http.post('')
+}
+
 
 
 }

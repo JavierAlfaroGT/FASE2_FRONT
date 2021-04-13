@@ -10,10 +10,12 @@ import { Router } from '@angular/router'
 })
 export class Vista1Component implements OnInit {
   title = 'prueba';
+
   tiendasstr = "tiendas ^-^"
   productosstr = "productos (*o*)"
   pedidosstr = "pedidos TuT"
   usuariosstr="usuarios -_-"
+  grafosstr="grafos xd"
 
 
   txtTiendas = ""//texto q envio a golang
@@ -86,6 +88,19 @@ export class Vista1Component implements OnInit {
         )
         //console.log("volvio de go:"+alfa)
          }
+
+         if (tipo == 5) { 
+          // console.log("JIMMY NEWTRON")
+          document.getElementById("GRAFOS").innerText = this.txtTiendas 
+          var alfa = this.fase2service.CargaGrafo(this.txtTiendas)
+          .subscribe(
+            res=>{
+              console.log(res)
+            },
+            err=>console.log(err)
+          )
+          //console.log("volvio de go:"+alfa)
+           }
 
     }
     fileReader.readAsText(this.file);

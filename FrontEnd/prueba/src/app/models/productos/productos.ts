@@ -5,5 +5,6 @@ export class Productos {
 	Precio//:      float64 //ojo
 	Cantidad//:    int
 	Imagen:      string
+	Almacenamiento: string
 
 }

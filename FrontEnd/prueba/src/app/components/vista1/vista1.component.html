@@ -51,17 +51,26 @@
                         </li>
                         <li><a class="dropdown-item" id="2"(click)="Mensaje(productosstr)">Productos</a></li>
                         <input type='file' (change)="fileChanged($event,2)">
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" id="5"(click)="Mensaje(grafosstr)" >Grafo</a></li>
+                        <input type='file' (change)="fileChanged($event,5)">
+                        <li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" id="4"(click)="Mensaje(usuariosstr)" >Usuarios</a></li>
+                            <input type='file' (change)="fileChanged($event,4)">
                         
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li><a class="dropdown-item" id="3"(click)="Mensaje(pedidosstr)" >Pedidos</a></li>
                         <input type='file' (change)="fileChanged($event,3)">
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" id="4"(click)="Mensaje(usuariosstr)" >Usuarios</a></li>
-                        <input type='file' (change)="fileChanged($event,4)">
+
                     </ul>
                 </li>
               
@@ -81,7 +90,7 @@
         
   
               <div class="container">
-                  <div class="row row-cols-4">
+                  <div class="row row-cols-5">
                     <div class="col">
                         
               <h2>TIENDAS</h2>
@@ -96,16 +105,18 @@
                       <textarea class="form-control" name="PEDIDOSTXT" id="PEDIDOS" rows="10" placeholder="Ingresa los pedidos" readonly></textarea>
                 </div>
                 <div class="col">
-                    <h2>Usuarios</h2>
+                    <h2>USUARIOS</h2>
                     <textarea class="form-control" name="USUARIOSTXT" id="USUARIOS" rows="10" placeholder="Ingresa los usuarios" readonly></textarea>
-          
-              
               </div>
+              <div class="col">
+                <h2>GRAFO</h2>
+                <textarea class="form-control" name="GRAFOSTXT" id="GRAFOS" rows="10" placeholder="Ingresa el grafo" readonly></textarea>
+          </div>
   
     </div>  
 </div>
   
-  <a>aqui va lo de encriptar los passwords</a>
+
   <br>
   <a>aqui va lo de eliminar cuenta</a>
   
