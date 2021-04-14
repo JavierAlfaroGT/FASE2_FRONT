@@ -247,6 +247,27 @@ CargaGrafo(txt){
   //this.http.post('')
 }
 
+getGrafoF3():Observable<any>{
+
+  console.log("********************************  get GRAFO full   *****************************\n")
+
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
+  return this.http.get<any>('http://localhost:3000/getGrafoF3', httpOptions);//devuelve el grafo de todos los anyos y meses juntos
+
+}
+
+BorrarUsuario(txt){
+  //document.getElementById("TIENDAS").innerText 
+  console.log("***********************************************************************\n"+txt)
+  var json = JSON.parse(txt);
+  
+  return this.http.post<any>('http://localhost:3000/DeleteUsuarios',json )
+  //this.http.post('')
+}
 
 
 }

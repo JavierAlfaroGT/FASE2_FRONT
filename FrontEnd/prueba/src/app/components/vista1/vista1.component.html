@@ -79,8 +79,14 @@
         </div>
     </div>
   </nav>
-  <h1>INICIO</h1>
-  <h3>Desactivar antivirus para generar imagenes!</h3>
+
+  <div class="container">
+
+    <h1>INICIO</h1>
+    <h3>Desactivar antivirus para generar imagenes!</h3>
+
+  </div>
+
   
        
     
@@ -116,7 +122,70 @@
     </div>  
 </div>
   
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12 bg-dark text-white">Ver grafo [Carga]
+              <img height="550" width="930" src="{{'data:image/png;base64,' + imageBase64F3C}}" />        
+      </div>
 
-  <br>
-  <a>aqui va lo de eliminar cuenta</a>
+  </div>
+
+    
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    Borrar usuario
+                </div>
+                <div class="card-body">
+                    <form> <!--form (submit)="signUp()"-->
+                        <div class="form-group">
+                          <a>Nombre</a>
+                          <input type="text" [(ngModel)]="newUser.nombre" name="nombre" class="form-control" placeholder="Nombre" required>
+                      </div>
+                      <div class="form-group">
+                          <a>DPI</a>
+                          <input type="text" [(ngModel)]="newUser.dpi" name="dpi" class="form-control" placeholder="DPI" required>
+                      </div>
+                        <button type="button" class="btn btn-primary btn-block" (click)="BorrarUsuario()">
+                            Borrar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
   
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
