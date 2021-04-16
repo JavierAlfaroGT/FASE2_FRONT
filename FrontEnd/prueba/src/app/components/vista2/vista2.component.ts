@@ -54,7 +54,7 @@ export class Vista2Component implements OnInit {
 
           original.ListaProductos.forEach(originalP => {//recorro la lista de productos de tienda en inventario original
             if (originalP.Nombre == element.item.Nombre) {
-              if (originalP.Cantidad - element.cantidad >= 0) {
+              if (originalP.Cantidad - element.cantidad >= 0) {//resto la cantidad en carrito con la de la bodega
                 originalP.Cantidad -= element.cantidad
                 this.ItemC -= element.cantidad
 
@@ -105,13 +105,26 @@ export class Vista2Component implements OnInit {
     });
 
 
+    
 
     //si la compra fue totalmente exitosa
     //this.Carrito=[]
     //this.Subtotal = 0
     //this.ItemC = 0
   }
-  compraMalaOff() { this.compraMala = !true }
+  compraMalaOff() { 
+    alert("heureka")
+    this.compraMala = !true 
+        //hacer un post para que en el back mmmmm retorne el robot a su posicion original
+        this.fase2service.cerrarPedido()
+        .subscribe(
+          res => {
+            console.log(res)
+          },
+          err => console.log(err)
+        )
+  
+  }
 
   ffff() {
     //ACTUALIZE LOS Q SE PUDIERON COMPRAR

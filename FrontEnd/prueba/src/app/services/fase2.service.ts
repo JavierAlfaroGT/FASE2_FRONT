@@ -282,4 +282,14 @@ getreporteUsuario(txt):Observable<any>{
 }
 
 
+cerrarPedido():Observable<any>{
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
+  return this.http.get<any>('http://localhost:3000/cerrarPedido', httpOptions);
+}
+
+
 }
