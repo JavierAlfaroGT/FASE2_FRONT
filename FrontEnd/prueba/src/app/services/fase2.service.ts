@@ -270,4 +270,16 @@ BorrarUsuario(txt){
 }
 
 
+getreporteUsuario(txt):Observable<any>{
+
+  //return this.http.get<any>('http://localhost:3000/getMatrizD', httpOptions);
+  console.log("********************************  get reporte de usuario   *****************************\n"+txt)
+  var json = JSON.parse(txt);
+  console.log(json)
+  return this.http.post('http://localhost:3000/GetPedidoUsuario',json )//devuelve el anyo y sus meses respectivos
+  //this.http.post('')
+
+}
+
+
 }

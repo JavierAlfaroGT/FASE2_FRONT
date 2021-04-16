@@ -332,6 +332,27 @@ Month(cadena,cadena2){//para ver la matriz dispersa
 
   }
 
+  PedidoUsuario =""
+  ObtenerReporte(dpiU,tiendaU){
+
+    //alert(dpiU+","+tiendaU)
+      //POST PARA Q RETORNE LA MATRIZ DISPERSA
+  var valeria = "{ \"Dpi\":"+dpiU+",\"Tienda\":\""+tiendaU+"\"}"
+
+  this.fase2service.getreporteUsuario(valeria).subscribe((dataList: any) => {//
+    this.PedidoUsuario = dataList
+    alert(this.PedidoUsuario)
+    document.getElementById("GRAFOS").innerText =this.PedidoUsuario
+ 
+  }, (err) => {
+
+    console.log(err)
+  })
+    
+
+
+  }
+
 
 }
 
