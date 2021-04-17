@@ -126,6 +126,7 @@
     <!--p><input type="text" id="username" name="username" #username></p-->
     <div class="form-group">
         <input type="password" id="username" name="username" #username class="form-control" placeholder="Password" required>
+        <button  class="btn btn-info btn-block" (click)="setearFernet(username.value)" >Key sha256</button>
     </div>
 </div>
 </div>

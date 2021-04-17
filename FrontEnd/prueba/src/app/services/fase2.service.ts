@@ -291,5 +291,13 @@ cerrarPedido():Observable<any>{
   return this.http.get<any>('http://localhost:3000/cerrarPedido', httpOptions);
 }
 
+Fernet(txt){
+  //document.getElementById("TIENDAS").innerText 
+  console.log("*********************************************************************\n"+txt)
+  var json = JSON.parse(txt);
+  
+  return this.http.post('http://localhost:3000/keyFernet',json )
+  //this.http.post('')
+}
 
 }

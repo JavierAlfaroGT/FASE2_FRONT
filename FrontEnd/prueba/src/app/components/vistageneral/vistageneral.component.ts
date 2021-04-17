@@ -273,8 +273,21 @@ Month(cadena,cadena2){//para ver la matriz dispersa
   */
 
 
+  setearFernet(txt){
+    var valeria = "{ \"Fernet\":\""+txt+"\" }"
+    //alert(valeria)
+    this.fase2service.Fernet(valeria).subscribe((dataList: any) => {//metodo para retornar la imagen de la matriz
+      var fulk = dataList
+      alert(fulk)
+    }, (err) => {
+  
+      console.log(err)
+    })
+  }
+
   ObtenerAB(txt){    
-    if(txt=="1234"){
+
+    
 
     this.fase2service.getArbolNormal().subscribe((dataList: any) => {//metodo para retornar la imagen de la matriz
       this. imageBase64F3A = dataList
@@ -283,14 +296,12 @@ Month(cadena,cadena2){//para ver la matriz dispersa
   
       console.log(err)
     })
-  }else{
-    alert("ingrese password (maestro)")
-  }
+ 
   }
 
   ObtenerAB1(txt){
    // alert("sensible")
-   if(txt=="1234"){
+
     this.fase2service.getArbolSensible().subscribe((dataList: any) => {//metodo para retornar la imagen de la matriz
       this. imageBase64F3B = dataList
 
@@ -298,13 +309,11 @@ Month(cadena,cadena2){//para ver la matriz dispersa
   
       console.log(err)
     })
-  }else{
-    alert("ingrese password (maestro)")
-  }
+
   }
 
   ObtenerAB2(txt){
-    if(txt=="1234"){
+   
     this.fase2service.getArbolFull().subscribe((dataList: any) => {//metodo para retornar la imagen de la matriz
       this. imageBase64F3C = dataList
 
@@ -312,9 +321,7 @@ Month(cadena,cadena2){//para ver la matriz dispersa
   
       console.log(err)
     })
-  }else{
-    alert("ingrese password (maestro)")
-  }
+
   }
 
 
