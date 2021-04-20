@@ -92,7 +92,8 @@ export class Vista1Component implements OnInit {
         //console.log("volvio de go:"+alfa)
       }
       if (tipo == 3) { 
-        document.getElementById("PEDIDOS").innerText = this.txtTiendas
+       // document.getElementById("PEDIDOS").innerText = this.txtTiendas
+       document.getElementById("PEDIDOS").innerText = "ahora le toca al back-end :v"
         var alfa = this.fase2service.CargaPedidos(this.txtTiendas)
         .subscribe(
           res=>{
